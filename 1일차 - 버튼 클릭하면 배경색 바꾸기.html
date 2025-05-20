@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1일차 - 버튼 클릭하면 배경색 바꾸기</title>
+    <style>
+        body {
+            background-color: pink;
+            transition: background-color 0.5s;
+        }
+
+        .color-on {
+            background-color: #D8BFD8;
+        }
+
+        #message {
+            display: none;
+        }
+
+        #message.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="toggleBg()">색을 바꿔보자!</button>
+    <p id="message" class="hidden">색이 바뀌었어!</p>
+
+    <script>
+        // 코드 : .classList.toggle("클래스명")	
+        // 설명 : 해당 클래스가 없으면 추가, 있으면 제거(추가·제거·토글할 수 있는 도구)
+        function toggleBg() {
+            document.body.classList.toggle("color-on");
+
+            document.getElementById("message").classList.toggle("show");
+
+            // document.body.style.backgroundColor = '#D8BFD8';
+
+            // document.getElementById("message").style.display = "block"
+        }
+    </script>
+</body>
+
+</html>

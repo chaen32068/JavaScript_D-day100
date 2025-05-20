@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            transition: background 0.3s;
+            font-family: sans-serif;
+        }
+
+        .bg-on {
+            background-color: lavender;
+        }
+
+        #message {
+            display: none;
+            font-size: 20px;
+            color: purple;
+            margin-top: 20px;
+        }
+
+        #message.show {
+            display: block;
+        }
+
+        #count {
+            font-size: 50px;
+            color: darkslateblue;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="clickBtn()">눌러보세요!</button>
+
+    <div id="count">0</div>
+    <p id="message">색이 바뀌었어! 클릭 수: 0</p>
+
+    <script>
+        let count = 0;
+
+        function clickBtn() {
+
+            // 숫자 증가
+            count += 1;
+            document.getElementById('count').innerText = count;
+
+            // 배경색 토글
+            document.body.classList.toggle('bg-on');
+
+            // 메시지 토글
+            const msg = document.getElementById('message');
+            msg.innerText = `색이 바뀌었어! 클릭 수: ${count}`;
+            msg.classList.toggle('show');
+        }
+    </script>
+
+</body>
+
+</html>

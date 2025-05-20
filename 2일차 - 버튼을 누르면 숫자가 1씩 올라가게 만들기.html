@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2일차 - 버튼을 누르면 숫자가 1씩 올라가게 만들기</title>
+</head>
+
+<body>
+    <button onclick="countBtn();">버튼을 눌러봐!</button>
+    <p id="count">0</p>
+
+    <script>
+        let num = 0;
+
+        function countBtn() {
+            num += 1;
+
+            document.getElementById('count').innerText = num;
+        }
+    </script>
+</body>
+
+</html>

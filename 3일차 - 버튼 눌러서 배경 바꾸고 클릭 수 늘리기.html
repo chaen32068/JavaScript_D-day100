@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3일차 - 버튼 눌러서 배경 바꾸고 클릭 수 늘리기</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            transition: background 0.3s;
+            font-family: sans-serif;
+        }
+
+        #color-name {
+            font-size: 24px;
+            margin-top: 20px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        #message {
+            display: none;
+        }
+
+        #message.on {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🎨 배경 바꾸기 + 클릭 수</h2>
+    <button onclick="changeEverything()">눌러봐!</button>
+
+    <p id="color-name">현재 배경색: white</p>
+    <p id="count">클릭 수: 0</p>
+    <p id="message">또 바뀌었어!</p>
+
+    <script>
+        const colors = ['pink', 'lightblue', 'lavender', 'mintcream', 'beige', 'khaki'];
+        let clickCount = 0;
+
+        function changeEverything() {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            const pickedColor = colors[randomIndex];
+
+            // 배경색 바꾸기
+            document.body.style.backgroundColor = pickedColor;
+
+            // 텍스트 변경
+            document.getElementById('color-name').innerText = `현재 배경색: ${pickedColor}`;
+
+            // 클릭 수 올리기
+            clickCount = clickCount + 1;
+            document.getElementById('count').innerText = `클릭 수: ${clickCount}`;
+
+            // 메시지 보이기 (toggle)
+            document.getElementById('message').classList.toggle('on');
+        }
+    </script>
+</body>

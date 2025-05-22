@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>4일차 - 버튼을 누를 때마다 클릭 수가 올라가고 메시지 바뀌게 만들기</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: sans-serif;
+            padding: 50px;
+        }
+
+        body.blue {
+            background-color: skyblue;
+        }
+
+        body.pink {
+            background-color: pink;
+        }
+
+        #msg {
+            font-size: 24px;
+            color: purple;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>4일차 - 조건문 연습!</h2>
+    <button onclick="checkEvenOdd()">눌러봐!</button>
+    <p id="count">0</p>
+    <p id="msg">클릭하면 짝/홀 알려줄게!</p>
+
+    <script>
+        let count = 0;
+
+        function checkEvenOdd() {
+            count++; //클릭할 때 마다 1씩 증가
+            document.getElementById('count').innerText = count;
+
+            document.body.classList.remove('blue', 'pink');
+
+            if (count % 2 === 0) {
+                document.getElementById('msg').innerText = '짝수야!'
+                document.body.classList.add('blue');
+            } else {
+                document.getElementById('msg').innerText = '홀수야!';
+                document.body.classList.add('pink');
+            }
+        }
+    </script>
+
+    <!-- <script>
+        let count = 0;
+
+        function checkEvenOdd() {
+            count++;
+            document.getElementById('count').innerText = count;
+
+            if (count % 2 === 0) {
+                document.getElementById('msg').innerText = '짝수야!';
+            } else {
+                document.getElementById('msg').innerText = '홀수야!'
+            }
+        }
+    </script> -->
+</body>
+
+</html>

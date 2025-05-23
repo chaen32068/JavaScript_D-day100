@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>5일차 - 함수에 매개변수 넣고 사용자 입력 받아서 인사하기</title>
+</head>
+
+<body>
+    <h2>5일차 - 이름으로 인사하기!</h2>
+    <button onclick="greetUser()">누구세요?</button>
+    <p id="message">👉 버튼을 눌러보세요!</p>
+
+    <script>
+        function greetUser() {
+            const name = prompt('당신의 이름은?');
+
+            const message = document.getElementById('message');
+
+            if (name) {
+                message.innerText = name + "님, 안녕하세요! 😊";
+            } else {
+                message.innerText = name + "이름을 입력해 주세요! ⚠️";
+            }
+        }
+    </script>
+</body>
+
+</html>

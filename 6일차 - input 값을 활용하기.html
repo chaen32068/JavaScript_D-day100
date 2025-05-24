@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6일차 - input 값을 활용하기</title>
+    <style>
+        .on {
+            background-color: pink;
+            transition: all .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <strong>🎯 오늘의 목표</strong>
+    <p style="margin-bottom: 50px;">
+        1. input에 사용자가 직접 이름을 입력하면<br />
+        2. 버튼을 눌렀을 때<br />
+        3. 입력된 이름에 따라 인사 메시지가 나오고<br />
+        4. 특정 이름이면 배경색이 바뀌는 기능까지 만들기!
+    </p>
+
+    <h2>이름 입력하고 인사 받기</h2>
+    <input type="text" id="username" placeholder="이름을 입력하세요" />
+    <button onclick="greet()">인사하기</button>
+    <p id="message">여기에 인사말이 나와요!</p>
+
+    <script>
+        function greet() {
+            let name = document.getElementById('username').value;
+            let msg = document.getElementById('message');
+
+            if (!name) {
+                msg.innerText = `이름을 입력해줘!`
+            } else if (name === '제니') {
+                msg.innerText = `제니야~ 기다리고 있었어!😘`;
+                document.body.classList.add('on');
+            } else {
+                msg.innerText = `${name}, 안녕!`;
+                document.body.classList.remove('on');
+                document.body.style.backgroundColor = 'skyblue';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7일차 - 사용자가 입력한 이름을 받아서 인사하기</title>
+    <style>
+        #msg {
+            display: none;
+        }
+
+        #msg.on {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🧩 만들기 조건</h2>
+    <p>
+        1. 이름을 입력할 수 있는 input<br />
+        2. 버튼을 클릭하면 함수가 실행되며,<br />
+        3. 입력된 이름이 함수에 매개변수로 전달되고<br />
+        4. p 태그에 "안녕, 00!"" 이 출력됨
+    </p><br /><br />
+    <button onclick="sayHi();">버튼을 눌러줘 😆! </button>
+    <button onclick="pushBtn('제니');">버튼을 눌러줘 😆! </button>
+    <p id="msg">반가워!</p>
+
+    <script>
+        function sayHi() {
+            let name = prompt('이름이 뭐야?');
+            let msg = document.getElementById('msg');
+
+            msg.classList.add('on');
+            msg.innerText = `안녕, ${name}!`
+        }
+
+        function pushBtn(name) {
+            let msg = document.getElementById('msg');
+
+            msg.classList.add('on');
+            msg.innerText = `안녕, ${name}!`
+        }  
+    </script>
+</body>
+
+</html>

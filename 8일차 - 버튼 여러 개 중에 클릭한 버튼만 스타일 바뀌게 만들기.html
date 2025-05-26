@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8일차 - 버튼 여러 개 중에 클릭한 버튼만 스타일 바뀌게 만들기</title>
+    <style>
+        button.on {
+            background-color: pink;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🧩 오늘 배울 개념</h2>
+    <p>
+        1. onclick 으로 이벤트 연결하기<br />
+        2. 클릭한 버튼의 this를 활용해서 스타일 바꾸기<br />
+        3. 클래스 추가/제거해서 버튼마다 다르게 보이게 하기
+    </p><br /><br />
+    <h2>🍓 과일 중에 하나를 골라보세요!</h2>
+    <button onclick="selectFruit('딸기', this);">딸기</button>
+    <button onclick="selectFruit('바나나', this);">바나나</button>
+    <button onclick="selectFruit('수박', this);">수박</button>
+    <p id="msg">무슨 과일을 골랐어?</p>
+
+    <script>
+        function selectFruit(fruit, el) {
+            const buttons = document.querySelectorAll('button');
+
+            // forEach: 배열(또는 여러개의 요소들)을 하나 씩 꺼내서 반복
+            buttons.forEach(btn => {
+                btn.classList.remove('on');
+                el.classList.add('on');
+
+                document.getElementById('msg').innerText = `${fruit} 맛있지!😋`;
+            });
+
+            // buttons.forEach(function (btn) {
+            //     btn.classList.remove('on');
+            //     el.classList.add('on');
+
+            //     document.getElementById('msg').innerText = `${fruit} 맛있지!😋`;
+            // });
+        }
+    </script>
+</body>
+
+</html>

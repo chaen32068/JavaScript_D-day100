@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9일차 - 탭 메뉴 만들기</title>
+</head>
+
+<body>
+    <h2>🧩 오늘 배울 핵심 개념</h2>
+    <p>
+        1. HTML 구조를 이해하자 – 버튼 여러 개, 콘텐츠 여러 개<br />
+        2. 버튼을 클릭하면 → 해당 콘텐츠만 보여주기<br />
+        3. 다른 콘텐츠는 숨기고, 클릭한 콘텐츠만 보이게 하기
+    </p><br /><br />
+
+    <div class="wrap">
+        <button onclick="showTab(0, this)">점심🍱</button>
+        <button onclick="showTab(1, this)">저녁🍖</button>
+        <button onclick="showTab(2, this)">야식🌙</button><br /><br />
+
+        <div class="con">점심엔 김치찌개!</div>
+        <div class="con">저녁엔 고기고기!</div>
+        <div class="con">야식엔 치킨이 최고!</div>
+    </div>
+    <script>
+        function showTab(index, el) {
+            let buttons = document.querySelectorAll('button');
+            let contents = document.querySelectorAll('.con');
+
+            buttons.forEach(btn => btn.classList.remove('on'));
+
+            el.classList.add('on');
+
+            contents.forEach(con => con.style.display = 'none');
+
+            contents[index].style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

@@ -8,14 +8,16 @@
 </head>
 
 <body>
-    <h2>🧪 오늘의 미션</h2>
-    <p>
-        점수를 입력하면 합격/불합격을 알려주는 프로그램<br /><br />
-        점수가 60점 이상이면 "합격입니다! 🎉"<br />
-        그 외에는 "불합격입니다... 😢"<br /><br />
-    <h2>점수 결과 확인하기</h2>
-    <p id="result">👉 여기에 결과가 나와요</p>
-    </p>
+    <div id="wrap">
+        <h2>🧪 오늘의 미션</h2>
+        <p>
+            점수를 입력하면 합격/불합격을 알려주는 프로그램<br /><br />
+            점수가 60점 이상이면 "합격입니다! 🎉"<br />
+            그 외에는 "불합격입니다... 😢"<br /><br />
+        </p>
+        <h2>점수 결과 확인하기</h2>
+        <!-- <p id="result">👉 여기에 결과가 나와요</p> -->
+    </div>
 
     <script>
         let askPoint = prompt('몇점이야?');
@@ -24,9 +26,11 @@
         let resultEl = document.getElementById('result');
 
         if (resultPoint >= 60) {
-            resultEl.innerHTML = "합격입니다! 🎉";
+            // resultEl.innerHTML = "합격입니다! 🎉";
+            document.getElementById('wrap').innerHTML += '<p>합격입니다! 🎉</p>';
         } else {
-            resultEl.innerHTML = "불합격입니다... 😢";
+            // resultEl.innerHTML = "불합격입니다... 😢";
+            document.getElementById('wrap').innerHTML += '<p>불합격입니다... 😢</p>';
         }
 
 

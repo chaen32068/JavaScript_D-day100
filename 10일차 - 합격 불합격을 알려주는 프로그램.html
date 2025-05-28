@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10일차 - 합격 불합격을 알려주는 프로그램</title>
+</head>
+
+<body>
+    <h2>🧪 오늘의 미션</h2>
+    <p>
+        점수를 입력하면 합격/불합격을 알려주는 프로그램<br /><br />
+        점수가 60점 이상이면 "합격입니다! 🎉"<br />
+        그 외에는 "불합격입니다... 😢"<br /><br />
+    <h2>점수 결과 확인하기</h2>
+    <p id="result">👉 여기에 결과가 나와요</p>
+    </p>
+
+    <script>
+        let askPoint = prompt('몇점이야?');
+        let resultPoint = Number(askPoint);
+
+        let resultEl = document.getElementById('result');
+
+        if (resultPoint >= 60) {
+            resultEl.innerHTML = "합격입니다! 🎉";
+        } else {
+            resultEl.innerHTML = "불합격입니다... 😢";
+        }
+
+
+        // let Point = Number(prompt('몇점이야?'));
+
+        // if (Point >= 60) {
+        //     alert('합격입니다! 🎉');
+        // } else {
+        //     alert('불합격입니다... 😢');
+        // }
+    </script>
+</body>
+
+</html>

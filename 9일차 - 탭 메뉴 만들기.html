@@ -5,12 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>9일차 - 탭 메뉴 만들기</title>
+    <style>
+        .con {
+            display: none;
+        }
+
+        button.on {
+            background-color: pink;
+        }
+    </style>
 </head>
 
 <body>
     <h2>🧩 오늘 배울 핵심 개념</h2>
     <p>
-        1. HTML 구조를 이해하자 – 버튼 여러 개, 콘텐츠 여러 개<br />
+        1. HTML 구조를 이해하자 - 버튼 여러 개, 콘텐츠 여러 개<br />
         2. 버튼을 클릭하면 → 해당 콘텐츠만 보여주기<br />
         3. 다른 콘텐츠는 숨기고, 클릭한 콘텐츠만 보이게 하기
     </p><br /><br />
@@ -29,14 +38,22 @@
             let buttons = document.querySelectorAll('button');
             let contents = document.querySelectorAll('.con');
 
-            buttons.forEach(btn => btn.classList.remove('on'));
+            buttons.forEach(function (btn) {
+                btn.classList.remove('on');
+            });
+
+            // buttons.forEach(btn => btn.classList.remove('on'));
 
             el.classList.add('on');
 
-            contents.forEach(con => con.style.display = 'none');
+            contents.forEach(function (con) {
+                con.style.display = 'none';
+            });
+
+            // contents.forEach(con => con.style.display = 'none');
 
             contents[index].style.display = 'block';
-        }
+        };
     </script>
 </body>
 

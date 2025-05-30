@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12일차 - 사용자 입력에 따라 결과를 다르게 보여주기</title>
+</head>
+
+<body>
+    <input type="text" placeholder="비밀번호를 입력하세요.">
+    <button onclick="clickBtn()">버튼</button>
+    <p></p>
+
+    <script>
+
+        function clickBtn() {
+            let passWord = document.querySelector('input').value;
+
+            if (passWord === '1234') {
+                // alert('로그인 성공! 🎉');
+                document.querySelector('p').innerText = '로그인 성공! 🎉';
+            } else {
+                // alert('로그인 실패... 😢');
+                document.querySelector('p').innerText = '로그인 실패... 😢';
+            }
+        }
+    </script>
+</body>
+
+</html>

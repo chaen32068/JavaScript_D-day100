@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11일차 - 자바스크립트로 CSS를 바꿔보기</title>
+    <style>
+        .on {
+            color: #fff;
+            background-color: #07aced;
+            transition: all .3s;
+        }
+
+        .bgChange {
+            color: #fff;
+            background-color: skyblue;
+            transition: all .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🧩 오늘 배울 개념</h2>
+    <p>
+        1. onclick으로 버튼 클릭 시 이벤트 실행<br />
+        2. 자바스크립트로 스타일 바꾸기 (style.backgroundColor, style.color 등등)<br />
+        3. 버튼 클릭할 때마다 스타일을 계속바꿔보는 실습!
+    </p><br /><br />
+    <button onclick="changeColor();">클릭하면 색이 바뀜!🌈</button>
+
+    <script>
+        function changeColor() {
+            document.body.classList.toggle('bgChange');
+            document.querySelector('button').classList.toggle('on');
+        }
+    </script>
+</body>
+
+</html>
